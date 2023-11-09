@@ -1,13 +1,12 @@
 const categoriesList = document.getElementById('categories');
 const categoryItems = categoriesList.children;
-
 console.log('Number of categories:', categoryItems.length);
+const categoryItemsArr = [...categoryItems];
 
-for (let i = 0; i < categoryItems.length; i++) {
-  const categoryItem = categoryItems[i];
-  const categoryTitle = categoryItem.querySelector('h2').textContent;
-  const categoryElements = categoryItem.querySelectorAll('li').length;
+categoryItemsArr.forEach((categoryItem) => {
+  const categoryName = categoryItem.getElementsByTagName('h2')[0].textContent;
+  const categoryElements = categoryItem.getElementsByTagName('li');
 
-  console.log('Category:', categoryTitle);
-  console.log('Elements:', categoryElements);
-}
+  console.log('Category:', categoryName);
+  console.log('Elements:', categoryElements.length);
+});
